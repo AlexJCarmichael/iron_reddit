@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/links/new">Create a link!</li>
+        <li><a href="/users">Users</a></li>
+      </ul>
+    </nav>
+<div class='container'>
 <%= yield %>
+</div>
 
+<% if @links %>
+  <%= paginate @links %>
+<% end %>
 </body>
 </html>

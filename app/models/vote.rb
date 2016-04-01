@@ -11,4 +11,9 @@ class Vote < ActiveRecord::Base
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 1
   }
+
+  validates :user_id, uniqueness: {
+    scope: :link_id,
+    message: "Cannot vote for the same link more than once."
+  }
 end

@@ -1,0 +1,6 @@
+<h1> All those links </h1>
+
+<% @links.each do |link| %>
+<p> <a href='<%=link.body%>'> <%= link.title %></a> | <%= link.positive_votes %></p>
+<p><%= button_to 'Like', vote_path(1), method: :POST %></p>
+<% end %>

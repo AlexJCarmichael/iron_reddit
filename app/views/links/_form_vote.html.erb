@@ -1,0 +1,6 @@
+
+<%= form_for(@link) do |f| %>
+<% link.votes.positive += 1 %>
+<%= f.submit "Like" %>
+
+<% end %>

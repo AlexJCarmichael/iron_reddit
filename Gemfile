@@ -37,7 +37,7 @@ gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'
-  gem 'rails-pry'
+  gem 'pry-rails'
   gem 'faker'
 end
 

@@ -1,0 +1,20 @@
+
+<%= form_for(@link) do |f| %>
+      <div>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'input-field title', placeholder: "You won't believe what happens next!" %>
+        </div>
+
+        <div>
+          <%= f.label :body %>
+          <%= f.text_field :body, class: 'input-field body', placeholder: "www.clickbait.com" %>
+        </div>
+
+        <div>
+          <%= f.label :user_id%>
+          <%= f.collection_select(:user_id, User.all, :id, :user_name) %>
+          <%= f.submit %>
+        </div>
+      </div>
+<% end %>
