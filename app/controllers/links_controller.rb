@@ -1,6 +1,10 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.page(params[:page])
+    @links = Link.select("links.*, SUM(votes.positive - votes.negative) as aggregate_votes")
+                 .joins(:votes)
+                 .group("links.id")
+                 .order("aggregate_votes DESC")
+                 .page(params[:page])
   end
 
   def show

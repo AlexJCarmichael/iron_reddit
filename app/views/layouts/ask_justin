@@ -1,3 +1,6 @@
 <%= f.label :user_id%>
 <%= f.select :user_id, options_for_select( users, selected: @link.user_id), { include_blank: true }, class: 'select-field location' %>
 <%= f.submit %>
+
+<!-- <p><%= button_to 'Like', vote_path, method: :POST, form_class: "waves-effect waves-light btn" %></p>
+<p><%= button_to 'Disike', vote_path, method: :POST, form_class: "waves-effect waves-light btn" %></p> -->

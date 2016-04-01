@@ -1,6 +1,8 @@
 <h1> All those links </h1>
 
 <% @links.each do |link| %>
-<p> <a href='<%=link.body%>'> <%= link.title %></a> | <%= link.positive_votes %></p>
-<p><%= button_to 'Like', vote_path(1), method: :POST %></p>
+<p> <a href='<%=link.body%>'> <%= link.title %></a> | <%= link.aggregate_votes %></p>
+(+<%= link.positive_votes%> / -<%= link.negative_votes %>)
+<p><%= button_to 'Like', votes_path(link_id: link.id, positive: 'yes'), method: :POST, form_class: "waves-effect waves-light btn" %></p>
+<p><%= button_to 'Disike', votes_path(link_id: link.id, positive: 'no'), method: :POST, form_class: "waves-effect waves-light btn" %></p>
 <% end %>
