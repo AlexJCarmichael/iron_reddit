@@ -1,0 +1,26 @@
+
+<%= form_for(@user) do |f| %>
+      <div>
+        <div>
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, class: 'input-field title', placeholder: "PowerUser5000!" %>
+        </div>
+
+        <div>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'input-field body', placeholder: "John/Jane" %>
+        </div>
+
+        <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'input-field body', placeholder: "Doe" %>
+        </div>
+
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'input-field body', placeholder: "you@u.yourself" %>
+        </div>
+        <div>
+          <%= f.submit %>
+        </div>
+      </div>
+<% end %>
