@@ -19,4 +19,28 @@ class LinksController < ApplicationController
     @link = Link.create(title: params[:link][:title], body: params[:link][:body], user_id: params[:link][:user_id])
     redirect_to link_path(@link.id)
   end
+
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+      redirect_to @link
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to :back
+  end
+
+  private
+    def link_params
+      params.require(:link).permit(:title)
+    end
 end

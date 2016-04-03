@@ -4,3 +4,7 @@
 
 <!-- <p><%= button_to 'Like', vote_path, method: :POST, form_class: "waves-effect waves-light btn" %></p>
 <p><%= button_to 'Disike', vote_path, method: :POST, form_class: "waves-effect waves-light btn" %></p> -->
+
+
+<a><%= button_to 'Edit', links_path, method: :put, form_class: "waves-effect waves-light btn" %></a>
+<a><%= button_to 'Delete', action: "delete", id: link.id method: :delete, form_class: "waves-effect waves-light btn" %></a>

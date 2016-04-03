@@ -8,12 +8,20 @@
 
         <div>
           <%= f.label :body %>
-          <%= f.text_field :body, class: 'input-field body', placeholder: "www.clickbait.com" %>
+          <% if params[:action] == "edit" %>
+            <%= f.text_field :body, class: 'input-field body', placeholder: "www.clickbait.com", disabled: true %>
+          <% else %>
+            <%= f.text_field :body, class: 'input-field body', placeholder: "www.clickbait.com" %>
+          <% end %>
         </div>
 
         <div>
           <%= f.label :user_id%>
-          <%= f.collection_select(:user_id, User.all, :id, :user_name) %>
+          <% if params[:action] == "edit" %>
+            <%= f.collection_select(:user_id, User.all, :id, :user_name, {}, disabled: true) %>
+          <% else %>
+            <%= f.collection_select(:user_id, User.all, :id, :user_name) %>
+          <% end %>
           <%= f.submit %>
         </div>
       </div>
