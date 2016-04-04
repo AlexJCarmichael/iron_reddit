@@ -2,9 +2,9 @@
 
 <% @links.each do |link| %>
 <p class="main-text"> <a class="main-links" href='<%=link.body%>'> <%= link.title %></a> | Aggregate: <%= link.aggregate_votes %> </p>
-<% if link.votes.where('link.id') && link.votes.where('user.id == 50') %>
+<% if link.votes.where('user_id = 50') == [] %>
   <a><%= button_to 'Like', votes_path(link_id: link.id, positive: 'yes'), method: :post, form_class: "waves-effect waves-light btn" %></a>
-  <a><%= button_to 'Disike', votes_path(link_id: link.id, positive: 'no'), method: :post, form_class: "waves-effect waves-light btn" %></a>
+  <a><%= button_to 'Dislike', votes_path(link_id: link.id, positive: 'no'), method: :post, form_class: "waves-effect waves-light btn" %></a>
 <% end %>
 <a><%= link_to "Edit", { controller: "links", action: "edit", id: link.id }, class: "waves-effect waves-light btn" %></a>
 <%= button_to "delete", {:controller => :links,
