@@ -9,10 +9,10 @@
 <body>
   <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/links/new">Create a link!</li>
-        <li><a href="/users">Users</a></li>
-        <li><a href="/users/new">Create a user</a></li>
+        <li><%= link_to "Home", links_path%></li>
+        <li><%= link_to "Create a link!", new_link_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "New User", new_user_path %></li>
       </ul>
     </nav>
 <div class='container'>
