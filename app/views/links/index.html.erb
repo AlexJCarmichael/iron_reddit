@@ -1,12 +1,13 @@
 <h1> All those links </h1>
 
 <% @links.each do |link| %>
-<p class="main-text"> <a class="main-links" href='<%=link.body%>'> <%= link.title %></a> | Aggregate: <%= link.aggregate_votes %> </p>
-<% if link.votes.where('user_id = 50') == [] %>
-  <a><%= button_to 'Like', votes_path(link_id: link.id, positive: 'yes'), method: :post, form_class: "waves-effect waves-light btn" %></a>
-  <a><%= button_to 'Dislike', votes_path(link_id: link.id, positive: 'no'), method: :post, form_class: "waves-effect waves-light btn" %></a>
-<% end %>
-<a><%= link_to "Edit", { controller: "links", action: "edit", id: link.id }, class: "waves-effect waves-light btn" %></a>
-<%= button_to "delete", {:controller => :links,
-      :action => 'destroy', :id => link.id }, :method => :delete, form_class: "waves-effect waves-light btn" %>
+  <p class="main-text"> <a class="main-links" href='<%=link.body%>'> <%= link.title %></a> | Aggregate: <%= link.aggregate_votes %> </p>
+  <!-- put into the model to detect if a vote has been cast -->
+  <% if link.votes.where('user_id = 50') == [] %>
+    <%= button_to 'Like', votes_path(link_id: link.id, positive: 'yes'), method: :post, form_class: "waves-effect waves-light btn" %>
+    <%= button_to 'Dislike', votes_path(link_id: link.id, positive: 'no'), method: :post, form_class: "waves-effect waves-light btn" %>
+  <% end %>
+  <%= link_to "Edit", { controller: "links", action: "edit", id: link.id }, class: "waves-effect waves-light btn" %>
+  <%= button_to "delete", {:controller => :links,
+        :action => 'destroy', :id => link.id }, :method => :delete, form_class: "waves-effect waves-light btn" %>
 <% end %>
