@@ -15,6 +15,9 @@
         <li><%= link_to "New User", new_user_path %></li>
       </ul>
     </nav>
+<% if params[:controller] == "links" && params[:action] == "index" %>
+  <div id="clicky-button" class='waves-effect waves-light btn'> Top Link </div>
+<% end %>
 <div class='container'>
 <%= yield %>
 </div>

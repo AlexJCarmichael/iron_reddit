@@ -1,3 +1,4 @@
+/* globals $ */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -18,6 +19,17 @@
 //= require_tree .
 
 
-$(document).ready(function() {
-   $('select').material_select();
- });
+var clicky = function () {
+    $("#clicky-button").on("click", function () {
+        if ($(".container .main-text a").first().hasClass("highlight")) {
+            $(".container .main-text a").removeClass("highlight");
+        } else {
+            $(".container .main-text a").first().addClass("highlight");
+        }
+    });
+};
+
+
+
+$(document).ready(clicky);
+$(document).on("page:load", clicky);
