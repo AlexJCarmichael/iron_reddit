@@ -1,4 +1,4 @@
-<h1> All those links </h1>
+<h1 id="count-me"> All those links </h1>
 
 <% @links.each do |link| %>
   <p class="main-text"> <a class="main-links" href='<%=link.body%>'> <%= link.title %></a> | Aggregate: <%= link.aggregate_votes %> </p>

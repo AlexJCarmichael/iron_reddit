@@ -27,9 +27,14 @@ var clicky = function () {
             $(".container .main-text a").first().addClass("highlight");
         }
     });
+
+    var count = 0;
+    var clickyCount = function (){
+        count++;
+        console.log("Clicked on the header " + count + " times.");
+    };
+    $("#count-me").on("click", clickyCount);
 };
-
-
 
 $(document).ready(clicky);
 $(document).on("page:load", clicky);
