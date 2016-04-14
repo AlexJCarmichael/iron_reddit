@@ -28,7 +28,7 @@ gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'faker'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -38,7 +38,6 @@ gem 'kaminari'
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
-  gem 'faker'
 end
 
 group :development do
