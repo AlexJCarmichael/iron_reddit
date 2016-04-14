@@ -1,4 +1,4 @@
-<h2> That user <%= @user.user_name %> </h2>
+<h2 id="count-me"> That user <%= @user.user_name %> </h2>
 
 <p class="users-text"> <a class="main-links"><%= @user.user_name %></a> | <%= @user.first_name %>| <%= @user.last_name %></p>
 <%= button_to "delete", {:controller => :users, :action => 'destroy', :id => @user.id }, :method => :delete, form_class: "waves-effect waves-light btn" %>
